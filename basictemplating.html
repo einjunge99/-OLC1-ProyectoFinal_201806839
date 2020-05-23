@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>Proyecto Final</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js"></script>
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/jsonview.css">
+    <script src="js/jsonview.js"></script>
+    <style>
+        body {
+            position: relative;
+        }
+
+        ul.nav-pills {
+            top: 100px;
+            position: fixed;
+        }
+
+        nav.tope {
+            z-index: 100;
+            position: fixed;
+            width: 100%;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark tope">
+        <a class="navbar-brand" href="#">Detector de copias</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+     
+    </nav>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+     
+
+            <div id="section1">
+
+                <h1 class="display-4">Archivos de entrada</h1>
+                <h1 class="display-5 font-weight-light text-danger pointer" onClick="test()">Iniciar análisis</h1>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark mb-6">
+                            <div class="card-header">
+                                <label for="archivo-original">Código fuente</label>
+                            </div>
+                            <input type="file" id="archivo-original" style="display: none;" accept=".java" />
+                            <div class="list-group" id="original" style="height: 500px; position: relative;"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card text-white bg-danger mb-6">
+                            <div class="card-header">
+                                <label for="archivo-analizar">Código a analizar</label>
+                            </div>
+                            <input type="file" id="archivo-analizar" style="display: none;" accept=".java" />
+
+                            <div class="list-group" id="analizar" style="height: 500px; position: relative;"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="card text-white bg-dark mb-6">
+                            <div class="card-header">Consola</div>
+
+                            <div class="list-group" id="consola" style="height: 100px; position: relative;"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="section2">
+                <h1 class="display-4">Errores léxicos y/o sintácticos</h1>
+                <hr>
+                <div id="cuerpoErrores">
+
+                </div>
+
+            </div>
+            <br>
+            <div id="section3">
+                <h1 class="display-4">Clases copia</h1>
+                <hr>
+                <ul id="clasesCopia" class="list-group">
+
+                </ul>
+            </div>
+            <br>
+            <div id="section4">
+                <h1 class="display-4">Funciones copia</h1>
+                <hr>
+                <div id="funcionesCopia">
+
+                </div>
+                <br>
+                <div id="section5">
+                    <h1 class="display-4">Variables copia</h1>
+                    <hr>
+                    <div id="variablesCopia">
+
+                    </div>
+
+                </div>
+                <br>
+                <div id="section6">
+                    <h1 class="display-4">Salida de árbol AST</h1>
+                    <hr>
+                    <div class="root"></div>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+
+
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+</body>
+
+<script src="js/app.js"></script>
+
+
+</html>
